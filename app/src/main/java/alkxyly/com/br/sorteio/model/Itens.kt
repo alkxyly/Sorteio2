@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class  Itens(var identificador: Int, var nome: String,
+data class  Itens(var identificador: String, var nome: String,
                   var rg: String,
                   var cpf: String,
                   var valor: String,

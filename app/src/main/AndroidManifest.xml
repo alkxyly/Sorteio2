@@ -16,7 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SorteioActivity"></activity>
+        <activity android:name=".activity.SorteioActivity" />
+        <activity
+            android:name=".activity.ListagemDadosActivity"
+            android:label="@string/title_activity_listagem_dados"
+            android:parentActivityName=".activity.SorteioActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="alkxyly.com.br.sorteio.activity.SorteioActivity" />
+        </activity>
+        <activity
+            android:name=".activity.DadosClienteActivity"
+            android:label="@string/title_activity_dados_cliente"
+            android:parentActivityName=".activity.SorteioActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="alkxyly.com.br.sorteio.activity.SorteioActivity" />
+        </activity>
     </application>
 
 </manifest>

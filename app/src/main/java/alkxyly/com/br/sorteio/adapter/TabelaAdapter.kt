@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import kotlinx.android.synthetic.main.tabela_adapter.view.*
 
 class TabelaAdapter(private var context: Context,
@@ -21,17 +22,21 @@ class TabelaAdapter(private var context: Context,
         return ViewHolder(v);
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.i("onBindViewHolder",itens.get(position).nome)
-        holder.itemView.setOnClickListener{onClick(itens.get(position))}
-        return holder.bind(itens.get(position))
+       val context = holder.itemView.context
+       val item = itens[position]
+        Log.i("OnBind",item.nome)
+        holder.tIdentificador.text = item.identificador.toString()+"ª"
+
+
+        return holder.itemView.setOnClickListener{onClick(item)}
     }
     override fun getItemCount() = itens.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(itens: Itens) = with(itemView){
-            identificador.text = itens.identificador.toString() +"º"
-            //nome.text = itens.nome
+        var tIdentificador : TextView
 
+        init {
+            tIdentificador = itemView.findViewById<TextView>(R.id.identificador)
         }
     }
 }

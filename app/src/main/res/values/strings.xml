@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Sorteio</string>
     <string name="request_client_id">965664553418-4iv94lvm1545600d5kqkoephasffhvmr.apps.googleusercontent.com</string>
+    <string name="title_activity_listagem_dados">ListagemDadosActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_dados_cliente">DadosClienteActivity</string>
 </resources>
