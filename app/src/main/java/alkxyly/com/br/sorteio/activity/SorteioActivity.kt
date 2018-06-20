@@ -18,6 +18,9 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_sorteio.*
 import kotlinx.android.synthetic.main.dialog_customizado.*
 import android.content.Intent
+import android.view.Menu
+import android.view.MenuItem
+
 class SorteioActivity : AppCompatActivity() {
     private var tabela : Tabela? = null
 
@@ -165,6 +168,22 @@ class SorteioActivity : AppCompatActivity() {
         val key  = firebaseData.child("tabela").push().key
         tabela?.uid = key.toString()
         firebaseData.child("tabela").child(key).setValue(tabela)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.sorteio -> {
+                Toast.makeText(this, "Sortear", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+
     }
 
 }

@@ -35,7 +35,7 @@ class DadosClienteActivity : AppCompatActivity() {
         dataVencimentoDetalhe.text = args.getString("dataRecebimento")
         dataVendaDetalhe.text = args.getString("dataVenda")
         enderecoDetalhe.text = args.getString("endereco")
-        valorDetalhe.text = args.getString("valor")
+        valorDetalhe.text = "R$ "+args.getString("valor")
     }
 
 }
