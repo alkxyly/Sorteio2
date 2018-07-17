@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                 .enableAutoManage(this  /* OnConnectionFailedListener */) { }
                 .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
                 .build()
+
     }
     override fun onStart() {
         super.onStart()
@@ -71,9 +72,9 @@ class MainActivity : AppCompatActivity() {
             Log.i("TAG", currentUser!!.email.toString())
             this.conectado = true
         }
-        Log.i("TAG",conectado.toString())
+        Log.i(TAG,conectado.toString())
         if(conectado){
-            startActivity(Intent(this, SorteioActivity::class.java))
+           startActivity(Intent(this, SorteioActivity::class.java))
         }
     }
 

@@ -278,7 +278,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Autorizado por Jsoué Domingos  da Silva Júnior"
+                android:text="Autorizado por Josué Domingos  da Silva Júnior"
                 android:textAlignment="viewStart"
                 android:textStyle="bold|italic"
                 app:layout_constraintBottom_toBottomOf="parent"

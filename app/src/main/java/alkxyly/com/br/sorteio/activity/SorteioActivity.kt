@@ -26,6 +26,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.CheckBox
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
+import com.google.android.gms.auth.api.Auth
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -280,14 +281,17 @@ class SorteioActivity : AppCompatActivity() {
                 this.carregarTabela(myRef1)
                 return true
             }
-            R.id.sair -> {
+           /** R.id.sair -> {
                 FirebaseAuth.getInstance().signOut()
                 var it: Intent
                 it = Intent(this,MainActivity::class.java)
                 startActivity(it)
+
+
+
                 //Toast.makeText(this,"${user?.email}", Toast.LENGTH_SHORT).show()
                 return true
-            }
+            }*/
             else -> return super.onOptionsItemSelected(item)
         }
 

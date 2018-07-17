@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SorteioActivity" />
+        <activity
+            android:name=".activity.SorteioActivity" />
         <activity
             android:name=".activity.ListagemDadosActivity"
             android:label="@string/title_activity_listagem_dados"
