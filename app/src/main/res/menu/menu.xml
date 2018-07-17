@@ -7,13 +7,18 @@
         android:icon="@drawable/ic_refresh_black_24dp"
         android:title="Sortear"
         android:iconTint="#FFFFFF"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
     <item
         android:id="@+id/reiniciar"
         android:icon="@drawable/ic_delete_black_24dp"
-        android:title="Reiniciar"
+        android:title="Reiniciar Tabela"
         android:iconTint="#FFFFFF"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/sair"
+        android:title="Sair"
+        android:iconTint="#FFFFFF"
+        app:showAsAction="never"/>
 
 
 </menu>

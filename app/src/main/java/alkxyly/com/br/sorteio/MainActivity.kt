@@ -86,12 +86,10 @@ class MainActivity : AppCompatActivity() {
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         super.onActivityResult(requestCode, resultCode, data)
         Log.i(TAG, "Got Result code ${requestCode}.")
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == GOOGLE_LOG_IN_RC) {
             val result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
             Log.i(TAG, "With Google LogIn, is result a success? ${result.isSuccess}.")
             if (result.isSuccess) {
-                // Google Sign In was successful, authenticate with Firebase
                 firebaseAuthWithGoogle(result.signInAccount!!)
             } else {
                 Toast.makeText(this, "Some error occurred.", Toast.LENGTH_SHORT).show()
@@ -106,10 +104,9 @@ class MainActivity : AppCompatActivity() {
         firebaseAuth?.signInWithCredential(credential)?.addOnCompleteListener(this) { task ->
             Log.i(TAG, "Firebase Authentication, is result a success? ${task.isSuccessful}.")
             if (task.isSuccessful) {
-                // Sign in success, update UI with the signed-in user's information
                 startActivity(Intent(this, SorteioActivity::class.java))
+
             } else {
-                // If sign in fails, display a message to the user.
                 Log.e(TAG, "Authenticating with Google credentials in firebase FAILED !!")
             }
         }

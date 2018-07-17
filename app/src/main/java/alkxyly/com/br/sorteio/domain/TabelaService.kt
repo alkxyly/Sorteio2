@@ -38,10 +38,12 @@ class TabelaService{
             val itens = mutableListOf<Itens>()
 
 
-            for(i in 1..100){
-                val item = Itens(i.toString(),"Nome "+i,"78789789",
-                        "789789798","78,00","7979797979",
-                        "Rua exemplo X","12/03/2015","12/03/2012",true)
+            for(i in 0..99){
+                val item = Itens(i.toString(),"","",
+                        "","0,00","",
+                        "","","","",
+                        "","","",
+                        "","",false)
                 itens.add(item)
             }
             val tabela = Tabela("",itens)

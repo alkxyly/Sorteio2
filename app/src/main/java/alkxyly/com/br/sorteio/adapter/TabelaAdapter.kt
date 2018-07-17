@@ -4,6 +4,8 @@ package aktecnologia.br.com.sorteio.adapter
 import alkxyly.com.br.sorteio.R
 import alkxyly.com.br.sorteio.model.Itens
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -25,8 +27,14 @@ class TabelaAdapter(private var context: Context,
        val context = holder.itemView.context
        val item = itens[position]
         Log.i("OnBind",item.nome)
-        holder.tIdentificador.text = item.identificador.toString()+"ª"
 
+        if(item.identificador.toInt() in 0..9)
+            holder.tIdentificador.text = "0"+item.identificador.toString()
+        else  holder.tIdentificador.text = item.identificador.toString()
+
+        if(!item.nome.equals("")){
+            holder.tIdentificador.setTextColor((Color.parseColor("#ff0000")))
+        }else  holder.tIdentificador.setTextColor((Color.parseColor("#008000")))
 
         return holder.itemView.setOnClickListener{onClick(item)}
     }

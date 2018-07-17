@@ -32,12 +32,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
+
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/rg"
+                    android:id="@+id/rgDialog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="RG"
-                    />
+                    android:inputType="number"
+                    android:hint="RG" />
             </android.support.design.widget.TextInputLayout>
 
 
@@ -45,35 +46,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
+
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/cpf"
+                    android:id="@+id/cpfDialog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="CPF"
-                    />
+                    android:inputType="number"
+                    android:hint="CPF" />
             </android.support.design.widget.TextInputLayout>
 
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/valor"
+                    android:id="@+id/valorDialog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Valor"
-                    />
+                    android:inputType="numberDecimal"
+                    android:hint="Valor" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/telefone"
+                    android:id="@+id/telefoneDialog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Celular"
-                    />
+                    android:inputType="phone"
+                    android:hint="Celular" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -81,16 +84,78 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
+
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/endereco"
+                    android:id="@+id/ruaDialog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Endereço"
-                    />
+                    android:hint="Rua" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/numeroDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Número" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/cidadeDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Cidade" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/bairroDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Bairro" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/estadoDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Estado" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/complementoDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Complemento" />
             </android.support.design.widget.TextInputLayout>
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/dataVendaDialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -98,7 +163,7 @@
                 android:inputType="date" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/dataRecebimentoDialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -106,7 +171,7 @@
                 android:inputType="date" />
 
             <CheckBox
-                android:id="@+id/pago"
+                android:id="@+id/pagoDialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pago" />
