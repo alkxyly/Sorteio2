@@ -49,7 +49,7 @@ class SorteioActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sorteio)
 
         this.tabela = TabelaService.getTabela(context = this)
-        toolbar.setTitle("Sorteio")
+        toolbar.setTitle("Domingos Silva")
        // toolbar.setTitleTextColor(getColor(R.color.branco))
         setSupportActionBar(toolbar)
 
