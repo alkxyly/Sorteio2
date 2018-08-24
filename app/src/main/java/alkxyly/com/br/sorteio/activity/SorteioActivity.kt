@@ -50,6 +50,7 @@ class SorteioActivity : AppCompatActivity() {
 
         this.tabela = TabelaService.getTabela(context = this)
         toolbar.setTitle("Domingos Silva")
+        toolbar.setSubtitle("Sorteio")
        // toolbar.setTitleTextColor(getColor(R.color.branco))
         setSupportActionBar(toolbar)
 
@@ -281,17 +282,17 @@ class SorteioActivity : AppCompatActivity() {
                 this.carregarTabela(myRef1)
                 return true
             }
-           /** R.id.sair -> {
-                FirebaseAuth.getInstance().signOut()
+           R.id.vendas -> {
+              //  FirebaseAuth.getInstance().signOut()
                 var it: Intent
-                it = Intent(this,MainActivity::class.java)
+                it = Intent(this,ListagemVendasActivity::class.java)
                 startActivity(it)
 
 
 
                 //Toast.makeText(this,"${user?.email}", Toast.LENGTH_SHORT).show()
                 return true
-            }*/
+            }
             else -> return super.onOptionsItemSelected(item)
         }
 
