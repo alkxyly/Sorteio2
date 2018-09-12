@@ -259,7 +259,8 @@ class SorteioActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.sorteio -> {
-                val vencedor: Int = (0..99).random()
+                showSortear()
+               /** val vencedor: Int = (0..99).random()
 
                 /*MaterialStyledDialog.Builder(this)
                         .setTitle("Parabéns!")
@@ -272,14 +273,15 @@ class SorteioActivity : AppCompatActivity() {
                         .setHeaderDrawable(R.drawable.logo)
                         .withDialogAnimation(true)
                         //.setHeaderDrawable(ContextCompat.getDrawable(this, R.drawable.heaer))
-                        .show();
+                        .show();*/
                 return true
             }
             R.id.reiniciar ->{
-                val database1 : FirebaseDatabase
+             showCreateCategoryDialog()
+               /** val database1 : FirebaseDatabase
                 database1 = FirebaseDatabase.getInstance()
                 val myRef1: DatabaseReference = database1.getReference()
-                this.carregarTabela(myRef1)
+                this.carregarTabela(myRef1)*/
                 return true
             }
            R.id.vendas -> {
@@ -296,6 +298,117 @@ class SorteioActivity : AppCompatActivity() {
             else -> return super.onOptionsItemSelected(item)
         }
 
+    }
+
+    fun showCreateCategoryDialog() {
+        val context = this
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("Informa a Senha")
+
+        // https://stackoverflow.com/questions/10695103/creating-custom-alertdialog-what-is-the-root-view
+        // Seems ok to inflate view with null rootView
+        val view = layoutInflater.inflate(R.layout.confirmacao, null)
+
+        var categoryEditText = view.findViewById(R.id.senha) as EditText
+
+        builder.setView(view);
+
+        // set up the ok button
+        builder.setPositiveButton(android.R.string.ok) { dialog, p1 ->
+            val newCategory = categoryEditText.text
+            var isValid = true
+            if (newCategory.isBlank()) {
+                categoryEditText.error = "Campo Vazio"
+                isValid = false
+            }
+
+            if (isValid) {
+                val valido : Boolean = categoryEditText.text.toString().equals("dedinho310318")
+
+                if(valido){
+                    val database1 : FirebaseDatabase
+                    database1 = FirebaseDatabase.getInstance()
+                    val myRef1: DatabaseReference = database1.getReference()
+                    this.carregarTabela(myRef1)
+                }else
+                    Toast.makeText(context,"Senha Inválida",Toast.LENGTH_LONG).show()
+               /*  val database1 : FirebaseDatabase
+                database1 = FirebaseDatabase.getInstance()
+                val myRef1: DatabaseReference = database1.getReference()
+                this.carregarTabela(myRef1)*/
+            }
+
+            if (isValid) {
+                dialog.dismiss()
+            }
+        }
+
+        builder.setNegativeButton(android.R.string.cancel) { dialog, p1 ->
+            dialog.cancel()
+        }
+
+        builder.show();
+    }
+
+
+    fun showSortear() {
+        val context = this
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("Informa a Senha")
+
+        // https://stackoverflow.com/questions/10695103/creating-custom-alertdialog-what-is-the-root-view
+        // Seems ok to inflate view with null rootView
+        val view = layoutInflater.inflate(R.layout.confirmacao, null)
+
+        var categoryEditText = view.findViewById(R.id.senha) as EditText
+
+        builder.setView(view);
+
+        // set up the ok button
+        builder.setPositiveButton(android.R.string.ok) { dialog, p1 ->
+            val newCategory = categoryEditText.text
+            var isValid = true
+            if (newCategory.isBlank()) {
+                categoryEditText.error = "Campo Vazio"
+                isValid = false
+            }
+
+            if (isValid) {
+                val valido : Boolean = categoryEditText.text.toString().equals("dedinho310318")
+
+                if(valido){
+                    val vencedor: Int = (0..99).random()
+
+                    /*MaterialStyledDialog.Builder(this)
+                            .setTitle("Parabéns!")
+                            .setDescription("Número do Sorteio Gerado : ${vencedor.toString()}")
+                            .setIcon(R.drawable.ic_refresh_black_24dp)
+                            .show();*/
+                    MaterialStyledDialog.Builder(this)
+                            .setTitle("Parabéns! Gerado : ${vencedor.toString()}")
+                            .setDescription("**")
+                            .setHeaderDrawable(R.drawable.logo)
+                            .withDialogAnimation(true)
+                            //.setHeaderDrawable(ContextCompat.getDrawable(this, R.drawable.heaer))
+                            .show();
+                }else
+                    Toast.makeText(context,"Senha Inválida",Toast.LENGTH_LONG).show()
+                /*  val database1 : FirebaseDatabase
+                 database1 = FirebaseDatabase.getInstance()
+                 val myRef1: DatabaseReference = database1.getReference()
+                 this.carregarTabela(myRef1)*/
+            }
+
+            if (isValid) {
+                dialog.dismiss()
+            }
+        }
+
+        builder.setNegativeButton(android.R.string.cancel) { dialog, p1 ->
+            dialog.cancel()
+        }
+
+        builder.show();
     }
 
 }
