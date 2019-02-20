@@ -19,17 +19,16 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_sorteio.*
-import kotlinx.android.synthetic.main.dialog_customizado.*
 import android.content.Intent
-import android.support.v4.content.ContextCompat
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.CheckBox
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
-import com.google.android.gms.auth.api.Auth
+
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import kotlinx.android.synthetic.main.list_content.*
 
 class SorteioActivity : AppCompatActivity() {
     private var tabela : Tabela? = null

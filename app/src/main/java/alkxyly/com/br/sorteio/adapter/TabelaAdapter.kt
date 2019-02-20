@@ -26,7 +26,7 @@ class TabelaAdapter(private var context: Context,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        val context = holder.itemView.context
        val item = itens[position]
-        Log.i("OnBind",item.nome)
+        Log.i("OnBind",item.pago.toString())
 
         if(item.identificador.toInt() in 0..9)
             holder.tIdentificador.text = "0"+item.identificador.toString()
@@ -34,7 +34,11 @@ class TabelaAdapter(private var context: Context,
 
         if(!item.nome.equals("")){
             holder.tIdentificador.setTextColor((Color.parseColor("#ff0000")))
-        }else  holder.tIdentificador.setTextColor((Color.parseColor("#008000")))
+        }else   holder.tIdentificador.setTextColor((Color.parseColor("#008000")))
+
+        if(item.pago){
+            holder.tIdentificador.setTextColor((Color.parseColor("#0000FF")))
+        }
 
         return holder.itemView.setOnClickListener{onClick(item)}
     }
